@@ -10,12 +10,16 @@ public abstract class Observable {
     public void addObserver(Observer o) {
         o.setObserverID(++observerID);
         observers.add(o);
+        System.out.println();
         System.out.println("Observer " + o.ObserverID + " added.");
+        System.out.println();
     }
 
     public void removeObserver(Observer o) {
         observers.remove(o);
+        System.out.println();
         System.out.println("Observer " + o.ObserverID + " removed.");
+        System.out.println();
     }
 
     public void notifyObservers(int temp) {
