@@ -1,3 +1,5 @@
+import java.util.ArrayList;
+
 public interface Sorter {
-    void sort(int[] arr);
+    void sort(ArrayList<Integer> arr);
 }

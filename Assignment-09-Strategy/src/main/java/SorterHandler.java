@@ -1,5 +1,9 @@
+import java.util.ArrayList;
+
 public class SorterHandler {
     private Sorter sorter;
+
+    private SorterTimer sorterTimer = new SorterTimer();
 
     public SorterHandler(Sorter sorter) {
         this.sorter = sorter;
@@ -9,9 +13,9 @@ public class SorterHandler {
         this.sorter = sorter;
     }
 
-    public void sort(int[] arr) {
+    public void sort(ArrayList<Integer> arr) {
         if (sorter != null) {
-            sorter.sort(arr);
+            sorterTimer.timeSort(sorter, arr);
         } else {
             System.out.println("No sorting strategy defined.");
         }
