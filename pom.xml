@@ -16,6 +16,7 @@
         <module>Assignment-05-Singleton</module>
         <module>Assignment-06-Decorator</module>
         <module>Assignment-07-State</module>
+        <module>Assignment-09-Strategy</module>
     </modules>
 
     <properties>
