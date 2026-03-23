@@ -8,6 +8,8 @@ public class Controller {
     private Gui gui;
     private List<IMemento> history; // Memento history
 
+    private int timesUndone = 0;
+
     public Controller(Gui gui) {
         this.model = new Model();
         this.gui = gui;
@@ -15,6 +17,7 @@ public class Controller {
     }
 
     public void setOption(int optionNumber, int choice) {
+        deleteFuture();
         saveToHistory();
         model.setOption(optionNumber, choice);
     }
@@ -24,6 +27,7 @@ public class Controller {
     }
 
     public void setIsSelected(boolean isSelected) {
+        deleteFuture();
         saveToHistory();
         model.setIsSelected(isSelected);
     }
@@ -35,14 +39,20 @@ public class Controller {
     public void undo() {
         if (!history.isEmpty()) {
             System.out.println("Memento found in history");
-            IMemento previousState = history.remove(history.size() - 1);
+            IMemento previousState = history.get(history.size() - 1);
             model.restoreState(previousState);
             gui.updateGui();
+
+            timesUndone++;
         }
     }
 
     private void saveToHistory() {
         IMemento currentState = model.createMemento();
         history.add(currentState);
+    }
+
+    private void deleteFuture() {
+        history.removeIf(memento -> history.indexOf(memento) > history.size() - timesUndone);
     }
 }
