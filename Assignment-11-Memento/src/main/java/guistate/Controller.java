@@ -7,13 +7,13 @@ public class Controller {
     private Model model;
     private Gui gui;
     private List<IMemento> history; // Memento history
-
-    private int timesUndone = 0;
+    private List<IMemento> future; // Memento future for redo functionality
 
     public Controller(Gui gui) {
         this.model = new Model();
         this.gui = gui;
         this.history = new ArrayList<>();
+        this.future = new ArrayList<>();
     }
 
     public void setOption(int optionNumber, int choice) {
@@ -37,13 +37,25 @@ public class Controller {
     }
 
     public void undo() {
+        System.out.println("History size: " + history.size());
         if (!history.isEmpty()) {
             System.out.println("Memento found in history");
-            IMemento previousState = history.get(history.size() - 1);
+            IMemento previousState = history.remove(history.size() - 1);
+            future.add(previousState);
             model.restoreState(previousState);
             gui.updateGui();
+        }
+    }
 
-            timesUndone++;
+    public void redo() {
+        System.out.println("History size: " + history.size());
+        System.out.println("Future size: " + future.size());
+        if (!future.isEmpty()) {
+            System.out.println("Memento found in future");
+            IMemento nextState = future.remove(future.size() - 1);
+            history.add(nextState);
+            model.restoreState(nextState);
+            gui.updateGui();
         }
     }
 
@@ -53,6 +65,7 @@ public class Controller {
     }
 
     private void deleteFuture() {
-        history.removeIf(memento -> history.indexOf(memento) > history.size() - timesUndone);
+        future.clear();
     }
+
 }

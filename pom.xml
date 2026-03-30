@@ -19,6 +19,7 @@
         <module>Assignment-09-Strategy</module>
         <module>Assignment-10-Strategy</module>
         <module>Assignment-11-Memento</module>
+        <module>Assignment-12-Proxy</module>
     </modules>
 
     <properties>

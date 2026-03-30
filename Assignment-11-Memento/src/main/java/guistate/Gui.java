@@ -61,6 +61,9 @@ public class Gui extends Application {
                 // Ctrl-Z: undo
                 System.out.println("Undo key combination pressed");
                 controller.undo();
+            } else if (event.isControlDown() && event.getCode() == KeyCode.Y) {
+                System.out.println("Redo key combination pressed");
+                controller.redo();
             }
         });
 
