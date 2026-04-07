@@ -22,6 +22,7 @@
         <module>Assignment-12-Proxy</module>
         <module>Assignment-13-Visitor</module>
         <module>Assignment-14-Builder</module>
+        <module>Assignment-15-Adapter</module>
     </modules>
 
     <properties>
