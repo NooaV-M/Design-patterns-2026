@@ -23,6 +23,7 @@
         <module>Assignment-13-Visitor</module>
         <module>Assignment-14-Builder</module>
         <module>Assignment-15-Adapter</module>
+        <module>Assignment-18-Prototype</module>
     </modules>
 
     <properties>
