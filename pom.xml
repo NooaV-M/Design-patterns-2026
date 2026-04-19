@@ -24,6 +24,7 @@
         <module>Assignment-14-Builder</module>
         <module>Assignment-15-Adapter</module>
         <module>Assignment-18-Prototype</module>
+        <module>Assignment-19-Mediator</module>
     </modules>
 
     <properties>
