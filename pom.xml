@@ -25,6 +25,7 @@
         <module>Assignment-15-Adapter</module>
         <module>Assignment-18-Prototype</module>
         <module>Assignment-19-Mediator</module>
+        <module>Assignment-20-Iterator</module>
     </modules>
 
     <properties>
