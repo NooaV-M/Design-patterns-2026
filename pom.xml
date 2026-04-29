@@ -27,6 +27,7 @@
         <module>Assignment-19-Mediator</module>
         <module>Assignment-20-Iterator</module>
         <module>Assignment-21-Facade</module>
+        <module>Assignment-22-Command</module>
     </modules>
 
     <properties>
